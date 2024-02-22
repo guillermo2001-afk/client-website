@@ -190,4 +190,33 @@ main {
     width: 100%; /* Adjust as needed */
     margin-bottom: 10px; /* Adjust margin as needed */
 }
-         
+
+/* Updated CSS for Pricing Page */
+#pricing {
+    background-color: #ED9ED6; /* Change background color */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
+}
+
+.price-box {
+    flex: 0 0 calc(45% - 20px); /* Adjust as needed */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+}
+
+.price-box h2 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.price-box p {
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
