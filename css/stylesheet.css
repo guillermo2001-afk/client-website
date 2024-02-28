@@ -190,4 +190,28 @@ main {
     width: 100%; /* Adjust as needed */
     margin-bottom: 10px; /* Adjust margin as needed */
 }
-         
+
+#gallerycontainer{
+    float: right;
+    clear: both; /* Add this line to clear any previous floats */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Your existing code */
+
+footer {
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    padding: 20px; /* Adjust as needed */
+    margin-top: auto; /* Updated to "auto" to push the footer to the bottom */
+}
