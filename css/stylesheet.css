@@ -192,8 +192,19 @@ main {
 }
 
 /* Updated CSS for Pricing Page */
-#pricing {
-    background-color: #ED9ED6; /* Change background color */
+#gallerycontainer {
+    float: right;
+    clear: both; /* Add this line to clear any previous floats */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
@@ -220,3 +231,14 @@ main {
     color: var(--primary-color);
     margin-bottom: 0;
 }
+
+/* Your existing code */
+
+footer {
+    text-align: center;
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    padding: 20px; /* Adjust as needed */
+    margin-top: auto; /* Updated to "auto" to push the footer to the bottom */
+}
+
