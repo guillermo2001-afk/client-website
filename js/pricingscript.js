@@ -1,49 +1,48 @@
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // Select all elements with the class 'price-box'
-    var priceBoxes = $('.price-box');
+    var priceBoxes = document.querySelectorAll('.price-box');
 
     // Check if at least one or more elements were found
     if (priceBoxes.length > 0) {
 
         // Loop through each price box element
-        priceBoxes.each(function() {
+        priceBoxes.forEach(function (priceBox) {
 
             // Store the original content
-            var originalContent = $(this).html();
+            var originalContent = priceBox.innerHTML;
 
             // Add a 'mouseover' event listener to each price box
-            $(this).on('mouseover', function() {
+            priceBox.addEventListener('mouseover', function (event) {
 
                 // Remove existing text content
-                $(this).empty();
+                priceBox.innerHTML = '';
 
                 // Create a new element to hold additional information
-                var additionalInfo = $('<div></div>');
+                var additionalInfo = document.createElement('div');
 
                 // Create a text node with the additional information
-                var infoText = $('<p>Contact me for more details!</p>');
+                var infoText = document.createTextNode('Contact me for more details!');
 
-                // Append the text node to the new element
-                additionalInfo.append(infoText);
+                // Attach the text node to the new element
+                additionalInfo.appendChild(infoText);
 
                 // Append the new element to the price box
-                $(this).append(additionalInfo);
+                priceBox.appendChild(additionalInfo);
             });
 
             // Add a 'mouseout' event listener to each price box
-            $(this).on('mouseout', function() {
+            priceBox.addEventListener('mouseout', function (event) {
 
                 // Remove the additional information element
-                var additionalInfo = $(this).find('div');
-                if (additionalInfo.length > 0) {
-                    additionalInfo.remove();
+                var additionalInfo = priceBox.querySelector('div');
+                if (additionalInfo) {
+                    priceBox.removeChild(additionalInfo);
 
                     // Restore the original content
-                    $(this).html(originalContent);
+                    priceBox.innerHTML = originalContent;
                 }
             });
         });
     }
 });
-
