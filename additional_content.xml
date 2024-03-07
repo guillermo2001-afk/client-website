@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pricing>
+    <service>
+        <name>New Service Package</name>
+        <price>$700</price>
+    </service>
+</pricing>

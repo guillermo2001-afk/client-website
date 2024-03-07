@@ -232,8 +232,6 @@ main {
     margin-bottom: 0;
 }
 
-/* Your existing code */
-
 footer {
     text-align: center;
     color: var(--primary-color);
@@ -241,4 +239,3 @@ footer {
     padding: 20px; /* Adjust as needed */
     margin-top: auto; /* Updated to "auto" to push the footer to the bottom */
 }
-
