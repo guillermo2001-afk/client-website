@@ -1,19 +1,16 @@
-     // JavaScript code for rotating the gallery
-     var rotatingGallery = document.getElementById('rotating-gallery');
-     var images = rotatingGallery.getElementsByTagName('img');
-     let currentIndex = 0;
+    $(document).ready(function() {
+      var rotatingGallery = $('#rotating-gallery');
+      var images = rotatingGallery.find('img');
+      let currentIndex = 0;
 
-     // Hide all images except the first one initially
-     for (var i = 1; i < images.length; i++) {
-       images[i].style.display = 'none';
-     }
+      // Hide all images except the first one initially
+      images.not(':first').hide();
 
-     function rotateGallery() {
-       images[currentIndex].style.display = 'none';
-       currentIndex = (currentIndex + 1) % images.length;
-       images[currentIndex].style.display = 'block';
-     }
+      function rotateGallery() {
+        images.eq(currentIndex).hide();
+        currentIndex = (currentIndex + 1) % images.length;
+        images.eq(currentIndex).show();
+      }
 
-     setInterval(rotateGallery, 2000); // time interval change
-
-   
+      setInterval(rotateGallery, 2000); // time interval change
+    });
