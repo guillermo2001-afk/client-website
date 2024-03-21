@@ -7,10 +7,14 @@
       images.not(':first').hide();
 
       function rotateGallery() {
-        images.eq(currentIndex).hide();
-        currentIndex = (currentIndex + 1) % images.length;
-        images.eq(currentIndex).show();
+        images.eq(currentIndex).fadeOut(500, function() { // Fade out the current image
+          currentIndex = (currentIndex + 1) % images.length;
+          images.eq(currentIndex).fadeIn(500); // Fade in the next image
+        });
       }
 
-      setInterval(rotateGallery, 2000); // time interval change
+      setInterval(rotateGallery, 3000); // Increased time interval to 3 seconds
+
+      //css round corners
+      images.css('border-radius', '10px');
     });
