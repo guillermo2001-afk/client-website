@@ -1,45 +1,67 @@
-// Select the button element
-const button = document.querySelector('button');
+// Load jQuery from CDN or local resource
+const jqueryCDN = 'https://code.jquery.com/jquery-3.6.4.min.js';
 
-// Add event listener to the button
-button.addEventListener('click', function() {
-  // Create a new element for the gallery
-  const gallery = document.createElement('div');
-  gallery.style.display = 'flex';
-  gallery.style.flexWrap = 'wrap'; // Set flexWrap to wrap
-  gallery.style.justifyContent = 'center';
-  gallery.style.alignItems = 'center';
-  gallery.style.height = '100vh'; // Set the height of the gallery to 100% of the viewport height
-  gallery.style.overflow = 'auto'; // Set the overflow property to 'auto' to enable scrolling
-  
-  // Add images to the gallery
-  const images = [
-    '/images/image1.webp',
-    '/images/image2.jpg',
-    '/images/image3.jpg',
-    '/images/image4.jpg',
-    '/images/image2.jpg',
-    '/images/image3.jpg',
-    '/images/image4.jpg',
-    '/images/image2.jpg'
-  ];
-  
-  for (let i = 0; i < images.length; i++) {
-    const image = document.createElement('img');
-    image.src = images[i];
-    image.style.width = '40%'; // Set the width of the image to 80% of the gallery
-    gallery.appendChild(image);
+function loadjQuery() {
+  if (typeof jQuery === 'undefined') {
+    const script = document.createElement('script');
+    script.src = 'js/jquery-3.6.4.min.js';
+    script.type = 'text/javascript';
+    script.onload = function() {
+      mainScript();
+    };
+    document.head.appendChild(script);
+  } else {
+    mainScript();
   }
-  
-  // Find the position to insert the gallery
-  const container = document.getElementById('gallerycontainer');
-  
-  // Set the container's overflow property to 'hidden'
-  container.style.overflow = 'hidden';
-  
-  // Insert the gallery into the container
-  container.appendChild(gallery);
-  
-  // Hide the button
-  button.style.display = 'none';
-});
+}
+
+function mainScript() {
+  // Cache the jQuery selection for the button
+  const button = $('button');
+
+  $(document).ready(function() {
+    button.on('click', function() {
+      const gallery = $('<div>').css({
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        overflow: 'auto',
+        display: 'none' // Initially hide the gallery
+      });
+
+      const images = [
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image1.webp',
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image2.jpg',
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image3.jpg',
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image4.jpg',
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image2.jpg',
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image3.jpg',
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image4.jpg',
+        'https://guillermo2001.rhody.dev/client-website-version5/images/image2.jpg'
+      ];
+
+      $.each(images, function(index, src) {
+        const image = $('<img>').attr('src', src).css({
+          
+          height: '200px', // Set a fixed height for the images
+          borderRadius: '10px' // Add rounded corners
+        });
+        gallery.append(image);
+      });
+
+      const container = $('#gallerycontainer');
+      container.css('overflow', 'hidden');
+      container.append(gallery);
+
+      // Fade in the gallery
+      gallery.fadeIn();
+
+      button.fadeOut();
+    });
+  });
+}
+
+// Check if jQuery is loaded
+loadjQuery();
