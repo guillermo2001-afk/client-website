@@ -9,4 +9,3 @@ function validateTextLength($text, $min, $max) {
 function validateNumberRange($number, $min, $max) {
     return ($number >= $min && $number <= $max);
 }
-?>

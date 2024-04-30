@@ -18,3 +18,18 @@
       //css round corners
       images.css('border-radius', '10px');
     });
+
+    $(document).ready(function(){
+      // Smooth transition when clicking links
+      $('a').click(function(e){
+          e.preventDefault(); // Prevent default link behavior
+          var href = $(this).attr('href');
+          $('body').fadeOut('slow', function(){
+              window.location.href = href; // Redirect to the new page
+          });
+      });
+    });
+
+    $(document).ready(function(){
+      $('body').hide().fadeIn(1000);
+    });
