@@ -30,4 +30,3 @@ if (isset($_GET['data'])) {
 } else {
     echo "Data type not specified.";
 }
-?>

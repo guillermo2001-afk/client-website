@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Form submitted successfully!";
         
         // Set cookies
-        setcookie("name", htmlspecialchars($name), time() + (86400 * 30), "/");
-        setcookie("sessionNumber", htmlspecialchars($sessionNumber), time() + (86400 * 30), "/");
+        setcookie("name", htmlspecialchars($name), time() + 86400 * 30, "/");
+        setcookie("sessionNumber", htmlspecialchars($sessionNumber), time() + 86400 * 30, "/");
         
         // Set session variables
         $_SESSION['name'] = htmlspecialchars($name);
@@ -66,15 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <img id="logo" src="https://guillermo2001.rhody.dev/client-website-version6/images/Maddy%20Logo.png" alt="Maddy Logo" width="200" height="auto">
             </div>
             <nav>
-                <ul>
-                    <li><a href="https://guillermo2001.rhody.dev/client-website-version8/index.html">Home</a></li>
-                    <li><a href="https://guillermo2001.rhody.dev/client-website-version8/about.php">About Us</a></li>
-                    <li><a href="https://guillermo2001.rhody.dev/client-website-version8/pricing.html">Pricing</a></li>
-                    <li><a href="https://guillermo2001.rhody.dev/client-website-version8/gallery.html">Gallery</a></li>
-                    <li><a href="https://guillermo2001.rhody.dev/client-website-version8/photographers.php">Employees</a></li>
-
-                </ul>
-            </nav>
+            <ul>
+                <li><a href="https://guillermo2001.rhody.dev/client-website-version10/index.html">Home</a></li>
+                <li><a href="https://guillermo2001.rhody.dev/client-website-version10/about.php">About Us</a></li>
+                <li><a href="https://guillermo2001.rhody.dev/client-website-version10/pricing.html">Pricing</a></li>
+                <li><a href="https://guillermo2001.rhody.dev/client-website-version10/gallery.html">Gallery</a></li>
+                <li><a href="https://guillermo2001.rhody.dev/client-website-version10/photographers.php">Employees</a></li>
+            </ul>
+        </nav>
         </div>
     </header>
 
@@ -138,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </main>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script src="https://guillermo2001.rhody.dev/client-website-version6/js/script.js"></script>
+        <script src="https://guillermo2001.rhody.dev/client-website-version10/js/script.js"></script>
 
         <footer>
             <p>&copy; Created by Guillermo Hernandez</p>
